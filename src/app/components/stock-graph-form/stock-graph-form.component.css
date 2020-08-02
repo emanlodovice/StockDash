@@ -1,0 +1,9 @@
+#add-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.mat-dialog-actions {
+    justify-content: flex-end;
+}

@@ -1,0 +1,11 @@
+<app-stock-graph
+    *ngFor="let code of stockCodes"
+    [code]="code"
+    (onRemove)="removeStock($event)">
+</app-stock-graph>
+
+<div class="placeholder-logo-container" *ngIf="!stockCodes.length">
+    <img src="stockdash.png" alt="logo" class="placeholder-logo">
+</div>
+
+<app-stock-graph-form (addStock)="addStock($event)"></app-stock-graph-form>

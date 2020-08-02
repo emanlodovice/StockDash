@@ -1,0 +1,22 @@
+.graph-card {
+    display: inline-block;
+    margin: 10px;
+    width: 530px;
+    vertical-align: top;
+}
+
+.chart-container {
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+}
+
+.spinner {
+    margin: 10px auto !important;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

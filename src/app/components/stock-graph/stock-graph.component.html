@@ -1,0 +1,24 @@
+<mat-card class="graph-card">
+    <mat-card-header>
+        <mat-card-title>{{code}}</mat-card-title>
+        <button class="close" mat-icon-button (click)="remove()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-card-header>
+    <div class="chart-container" *ngIf="showGraph">
+        <canvas id="chart-canvas-{{ code }}"></canvas>
+    </div>
+    <mat-spinner *ngIf="!showGraph" class="spinner" diameter="50"></mat-spinner>
+    
+    <mat-card-footer *ngIf="showGraph">
+        <mat-form-field appearance="fill" class="date-picker">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" [(ngModel)]="startDate" (dateChange)="dateChange($event)" disabled>
+                <input matEndDate placeholder="End date" [(ngModel)]="endDate" (dateChange)="dateChange($event)" disabled>
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker disabled="false" (selectedChanged)="dateChange($event)"></mat-date-range-picker>
+        </mat-form-field>
+    </mat-card-footer>
+</mat-card>
